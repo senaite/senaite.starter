@@ -1,0 +1,48 @@
+site_name: SENAITE Starter
+
+theme:
+  name: material
+  palette:
+    primary: white
+  features:
+    - content.code.select
+    - content.code.copy
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - codehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: True
+
+plugins:
+  - search
+  - simple:
+      folders: ["src/senaite/**"]
+  - offline
+  - mkdocstrings
+  - pdf-export:  # https://github.com/zhaoterryy/mkdocs-pdf-export-plugin
+      combined: true
+      combined_output_path: pdf/senaite.starter.pdf
+
+nav:
+  - Home: README.md
+  - Docs:
+    - Custom JSON API Endpoints: src/senaite/starter/jsonapi/README.md
+    - Custom IMPRESS Reports: src/senaite/starter/impress/README.md
+    - Custom View Components: src/senaite/starter/browser/README.md
+    - Custom Content Fields: src/senaite/starter/content/README.md
+    - Custom Table Columns: src/senaite/starter/listing/README.md
+    - Adding Multi language Support:  src/senaite/starter/locales/README.md
+  - License: LICENSE.md
+  - Changes: CHANGES.md

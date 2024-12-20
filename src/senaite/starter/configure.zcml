@@ -1,0 +1,48 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <five:registerPackage package="." initialize=".initialize"/>
+
+  <!--  NB: We override senaite and plone translations.
+            Therefore, we have to ensure that this packages' zcml is loaded
+            before the others. -->
+  <i18n:registerTranslations directory="locales"/>
+
+  <!-- Custom permissions -->
+  <include package=".permissions"/>
+
+  <!-- Package includes -->
+  <include package=".browser" />
+  <include package=".content" />
+  <include package=".impress"/>
+  <include package=".jsonapi" />
+  <include package=".listing" />
+
+  <!-- Default Profile -->
+  <genericsetup:registerProfile
+      name="default"
+      title="SENAITE.STARTER"
+      description="Install senaite.starter"
+      directory="profiles/default"
+      provides="Products.GenericSetup.interfaces.EXTENSION"/>
+
+  <!-- Uninstall Profile -->
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="SENAITE.STARTER"
+      description="Uninstall senaite.starter"
+      directory="profiles/uninstall"
+      provides="Products.GenericSetup.interfaces.EXTENSION"/>
+
+  <!-- Setup handler -->
+  <genericsetup:importStep
+      name="senaite.starter.install"
+      title="SENAITE.STARTER: Run Setuphandler"
+      description="Install senaite.starter"
+      handler="senaite.starter.setuphandlers.install"/>
+
+</configure>

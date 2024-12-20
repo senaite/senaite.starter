@@ -1,0 +1,45 @@
+<tal:report>
+
+  <!-- REPORT CONTROLS -->
+  <tal:t replace="structure python:view.render_controls(context, **options)" />
+
+  <!-- REPORT JS -->
+  <tal:t replace="structure python:view.render_js(context, **options)" />
+
+  <!-- REPORT CSS -->
+  <tal:t replace="structure python:view.render_css(context, **options)" />
+
+  <!-- REPORT HEADER -->
+  <tal:t replace="structure python:view.render_header(context, **options)" />
+
+  <!-- REPORT INFO -->
+  <tal:t replace="structure python:view.render_info(context, **options)" />
+
+  <!-- REPORT ALERTS -->
+  <tal:t replace="structure python:view.render_alerts(context, **options)" />
+
+  <!-- REPORT SUMMARY -->
+  <tal:t replace="structure python:view.render_summary(context, **options)" />
+
+  <!-- REPORT RESULTS -->
+  <tal:t replace="structure python:view.render_results(context, **options)" />
+
+  <!-- RESULTS INTERPRETATION -->
+  <tal:t replace="structure python:view.render_interpretations(context, **options)" />
+
+  <!-- SAMPLE REMARKS -->
+  <tal:t replace="structure python:view.render_remarks(context, **options)" />
+
+  <!-- REPORT ATTACHMENTS -->
+  <tal:t replace="structure python:view.render_attachments(context, **options)" />
+
+  <!-- REPORT SIGNATURES -->
+  <tal:t replace="structure python:view.render_signatures(context, **options)" />
+
+  <!-- REPORT DISCREETER -->
+  <tal:t replace="structure python:view.render_discreeter(context, **options)" />
+
+  <!-- REPORT FOOTER -->
+  <tal:t replace="structure python:view.render_footer(context, **options)" />
+
+</tal:report>

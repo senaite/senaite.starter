@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone">
+
+  <include package="plone.resource" file="meta.zcml"/>
+
+  <!-- Context aware report controller for Single Reports -->
+  <adapter
+      for="* * senaite.starter.interfaces.ISenaiteStarter"
+      name="AnalysisRequest"
+      factory=".reportview.SingleReportView"
+      provides="senaite.impress.interfaces.IReportView"
+      permission="zope2.View"/>
+
+  <!-- Context aware report controller for Multi Reports -->
+  <adapter
+      for="* * senaite.starter.interfaces.ISenaiteStarter"
+      name="AnalysisRequest"
+      factory=".reportview.MultiReportView"
+      provides="senaite.impress.interfaces.IMultiReportView"
+      permission="zope2.View"/>
+
+  <!-- senaite.impress resource directory -->
+  <plone:static
+      directory="reports"
+      type="senaite.impress.reports"
+      name="senaite.starter"/>
+
+</configure>

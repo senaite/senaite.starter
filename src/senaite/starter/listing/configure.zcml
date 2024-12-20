@@ -1,0 +1,12 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+  <!-- Sample listing with additional columns -->
+  <subscriber
+    for="senaite.core.browser.samples.view.SamplesView
+         bika.lims.interfaces.IAnalysisRequestsFolder"
+    provides="senaite.app.listing.interfaces.IListingViewAdapter"
+    factory=".sample_listing.SampleListingViewAdapter" />
+
+</configure>

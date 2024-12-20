@@ -1,0 +1,7 @@
+include *.md
+include *.yml
+include *.cfg
+include *.txt
+recursive-include docs *
+recursive-include templates *
+recursive-include src *

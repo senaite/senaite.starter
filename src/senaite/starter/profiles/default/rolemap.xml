@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rolemap>
+
+  <permissions>
+
+    <!-- Manage permissions -->
+    <permission name="senaite.starter: Field: Edit Extended Field" acquire="False">
+      <role name="Manager"/>
+      <role name="LabManager"/>
+      <role name="LabClerk"/>
+    </permission>
+
+  </permissions>
+
+</rolemap>

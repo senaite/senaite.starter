@@ -1,0 +1,4 @@
+mkdocs
+mkdocs-simple-plugin
+mkdocs-material
+mkdocstrings

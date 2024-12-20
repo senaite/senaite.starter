@@ -1,0 +1,22 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser">
+
+  <!-- Footer Viewlet -->
+  <browser:viewlet
+      name="plone.footer"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      class=".footer.FooterViewlet"
+      permission="zope2.View"
+      layer="senaite.starter.interfaces.ISenaiteStarter"
+      />
+
+  <!-- Colophon Viewlet -->
+  <browser:viewlet
+      name="plone.colophon"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      class=".colophon.ColophonViewlet"
+      permission="zope2.View"
+      layer="senaite.starter.interfaces.ISenaiteStarter"
+      />
+
+</configure>
