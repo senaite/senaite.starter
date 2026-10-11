@@ -187,13 +187,13 @@ Opening this page will allow you to create a new SENAITE site in the database.
 ## How to setup the development version SENAITE LIMS
 
 To test the compatibility of senaite.starter with the latest
-SENAITE sources, you can run the `development.cfg` configuration:
+SENAITE sources, you can run the `develop.cfg` configuration:
 
 ```shell
 $ which buildout
 senaite.starter-1.0.0/python2.7/bin/buildout
 
-$ buildout -c development.cfg
+$ buildout -c develop.cfg
 ```
 
 This will checkout the source distributions via [Git](https://git-scm.com) of
