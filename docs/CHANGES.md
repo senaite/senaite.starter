@@ -2,6 +2,7 @@
 
 ## Version 1.0.1 (unreleased)
 
+- #5 Ignore the scripts a buildout run generates
 - #4 Declare the translation domain in the package's ZCML
 - #3 Pin the SENAITE packages to 2.6.0
 - #2 Name the development configuration the way the file is named
