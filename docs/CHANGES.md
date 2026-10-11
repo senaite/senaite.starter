@@ -2,6 +2,7 @@
 
 ## Version 1.0.1 (unreleased)
 
+- #6 Stop asking Zope to install senaite.jsonapi as a product
 - #5 Ignore the scripts a buildout run generates
 - #4 Declare the translation domain in the package's ZCML
 - #3 Pin the SENAITE packages to 2.6.0

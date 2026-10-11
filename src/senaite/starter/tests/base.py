@@ -53,7 +53,10 @@ class SimpleTestLayer(PloneSandboxLayer):
         zope.installProduct(app, "senaite.core")
         zope.installProduct(app, "senaite.impress")
         zope.installProduct(app, "plone.jsonapi.core")
-        zope.installProduct(app, "senaite.jsonapi")
+        # NOTE: senaite.jsonapi is not a Zope 2 product. It has no
+        # five:registerPackage directive and no initialize(), so
+        # installProduct would only print "Could not install product
+        # senaite.jsonapi". Loading its ZCML above is all it needs.
         zope.installProduct(app, "senaite.starter")
 
     def setUpPloneSite(self, portal):
