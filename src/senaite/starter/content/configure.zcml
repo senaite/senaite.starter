@@ -4,4 +4,16 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:browser="http://namespaces.zope.org/browser">
 
+  <include package="plone.behavior" file="meta.zcml"/>
+
+  <!-- Sample Type Schema Extender (DX) -->
+  <plone:behavior
+      for="senaite.core.interfaces.ISampleType"
+      name="sampletype-extender"
+      title="Custom Sample Type Fields"
+      description="Add custom fields to the Sample Type Schema"
+      provides=".sampletype.ISampleTypeSchemaExtender"
+      factory=".sampletype.SampleTypeSchemaExtender"
+      />
+
 </configure>
