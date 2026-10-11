@@ -1,11 +1,17 @@
 # -*- coding: utf-8 -*-
 
+from bika.lims import api
+from plone.behavior.interfaces import IBehavior
 from Products.CMFPlone.utils import get_installer
 from senaite.impress.interfaces import ITemplateFinder
 from zope.component import getUtility
+from zope.component import queryUtility
 
+from senaite.starter.content.sampletype import ISampleTypeSchemaExtender
 from senaite.starter.tests.base import SimpleTestCase
 from senaite.starter.interfaces import ISenaiteStarter
+
+BEHAVIOR_ID = ISampleTypeSchemaExtender.__identifier__
 
 
 class TestSetup(SimpleTestCase):
@@ -26,6 +32,14 @@ class TestSetup(SimpleTestCase):
             if resource.get("name") == "senaite.starter":
                 record = resource
         self.assertTrue(len(record.get("contents", [])) > 0)
+
+    def test_sampletype_behavior_registered(self):
+        behavior = queryUtility(IBehavior, name=BEHAVIOR_ID)
+        self.assertIsNotNone(behavior)
+
+    def test_sampletype_behavior_assigned(self):
+        fti = api.get_tool("portal_types").get("SampleType")
+        self.assertIn(BEHAVIOR_ID, fti.behaviors)
 
     def test_jsonapi_registered(self):
         endpoint = "senaite.starter/version"
